@@ -1,0 +1,14 @@
+numpy
+pandas
+Pillow
+tifffile
+torch>=1.13
+monai
+scipy
+scikit-image
+connected-components-3d
+tqdm
+pyyaml
+nbconvert
+nbformat
+pytest

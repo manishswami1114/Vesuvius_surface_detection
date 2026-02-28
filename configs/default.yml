@@ -1,0 +1,39 @@
+
+# Paths
+DATA_ROOT: "/Data/vesuvius-challenge-surface-detection"
+TRAIN_CSV: "/Data/vesuvius-challenge-surface-detection/train.csv"
+TEST_CSV: "/Data/vesuvius-challenge-surface-detection/test.csv"
+TEST_IMAGES: "/Data/vesuvius-challenge-surface-detection/test_images"
+TRAIN_IMAGES: "/Data/vesuvius-challenge-surface-detection/train_images"
+TRAIN_LABELS: "/Data/vesuvius-challenge-surface-detection/train_labels"
+
+# Model / training
+MODEL_PATH: "/src/models/segresnet_maxperf_final.pth"
+OUTPUT_DIR: "/Data/Output/submission/submission_tifs"
+SUBMISSION_ZIP: "/Data/Output/submission/submission.zip"
+
+IN_CHANNELS: 1
+OUT_CHANNELS: 3
+INIT_FILTERS: 48
+IMG_SIZE: [128, 128, 128]
+
+# Sliding window / inference
+SW_BATCH_SIZE: 2
+SW_OVERLAP: 0.5
+
+# Post-processing
+MIN_COMPONENT_SIZE: 3000
+MAX_COMPONENTS: 8
+HOLE_FILL_THRESHOLD: 3000
+MORPH_KERNEL: 2
+STABILIZATION_ROUNDS: 50
+
+# Training hyperparams
+BATCH_SIZE: 2
+LEARNING_RATE: 1e-4
+WEIGHT_DECAY: 1e-5
+EPOCHS: 100
+PATCH_SIZE: [128,128,128]
+DEVICE: "cuda"
+CHECKPOINT_DIR: "/Data//Output/checkpoints"
+CSV_LOG: "/Data/Output/submission/training_log.csv"
