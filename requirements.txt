@@ -13,3 +13,4 @@ nbconvert
 nbformat
 pytest
 imagecodecs
+streamlit
