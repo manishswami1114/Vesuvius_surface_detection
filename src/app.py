@@ -119,7 +119,7 @@ def main():
     st.markdown('Surface Detection using TopoPreservingUnet3D model')
 
     st.sidebar.header('Settings')
-    checkpoint_path = st.sidebar.text_input('checkpoint path',value= '/Vesuvius_surface_detection/checkpoints_v11/fold_0/best_model.pth')
+    checkpoint_path = st.sidebar.text_input('checkpoint path',value= 'checkpoints_v11/fold_0/best_model.pth')
     overlap = st.sidebar.slider("Patch Overlap",min_value = 0.1,max_value=0.9,value=0.7,step=0.1)
     batch_size = st.sidebar.number_input('Batch Size',min_value=1,max_value=16,value=2)
     threshold = st.sidebar.slider('Post-processing Threshold',min_value=0.1,max_value=0.9,value=0.5,step=0.05)
