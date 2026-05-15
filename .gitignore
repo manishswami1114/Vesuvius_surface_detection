@@ -2,8 +2,7 @@ __pycache__/
 *.pyc
 .kaggle/
 kaggle_*
-*.pth
-*.pt
+
 *.zip
 .vscode/
 .ipynb_checkpoints/
