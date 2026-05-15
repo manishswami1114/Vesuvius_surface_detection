@@ -158,8 +158,3 @@ class TopoPreservingUNet3D(nn.Module):
 
 def count_params(m):
     return sum(p.numel() for p in m.parameters() if p.requires_grad)
-
-_m = TopoPreservingUNet3D(features=cfg.FEATURES, n_blocks=cfg.N_BLOCKS)
-print(f"TopoPreservingUNet3D: {count_params(_m)/1e6:.1f}M params")
-print(f"  Stages: {len(cfg.FEATURES)} | Features: {cfg.FEATURES}")
-del _m
