@@ -89,7 +89,10 @@ def sliding_window_inference(model,device,volume,patch_size,overlap=0.5,batch_si
         batch_tensor = torch.from_numpy(np.stack(patches)[:,None]).to(device)
         if device == 'cuda':
             batch_tensor = batch_tensor.half()
-        with torch.autocast(device_type=device,dtype=torch.float16 if device=='cuda' else torch.float32):
+        if device == 'cuda':
+            with torch.autocast(device_type='cuda', dtype=torch.float16):
+                batch_pred = torch.sigmoid(model(batch_tensor))
+        else:
             batch_pred = torch.sigmoid(model(batch_tensor))
         batch_pred = batch_pred.squeeze(1).float().cpu().numpy()
 
